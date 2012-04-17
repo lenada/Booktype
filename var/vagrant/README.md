@@ -1,5 +1,5 @@
 # Booktype with vagrant in a box out of the box
-
+[![BuildStatus](https://secure.travis-ci.org/lenada/Booktype.png)](http://travis-ci.org/lenada/Booktype)
 ##"Mission objectives"
  - setup a Booktype Installation automatically in a contained environment
  - virtualized development
