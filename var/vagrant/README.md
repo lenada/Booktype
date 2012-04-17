@@ -70,6 +70,8 @@ An ugly VirtualBox window should come up ;)
 for now provisioning works until /createbooki --database […]
 quite happy so far, as the python/django dependency installation is already working.
 
+createbooki should have created a mybooktype folder within var/www
+
 go to http://127.0.0.1:8000
 and access your booktype
 

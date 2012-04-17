@@ -13,10 +13,10 @@ end
 #    command "./createbooki --check-versions --database sqlite /vagrant_data/var/www/mybooktype/"
 #end
 
-execute "create-database" do
-    user "postgres"
-    command "createdb -U postgres -O vagrant mybooktype"
-end
+#execute "create-database" do
+#    user "postgres"
+#    command "createdb -U postgres -O vagrant mybooktype"
+#end
 
 
 execute "booktype_hopeitruns" do
