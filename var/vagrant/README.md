@@ -47,6 +47,10 @@ for example /Users/leander/.rvm/rubies/ruby-1.9.3-p0/bin/gem
 
 not the ruby/gem that comes with your host os (for example on os x)
 
+	$ gem install vagrant
+
+download and add vanilla base box
+
     $ vagrant box add base http://files.vagrantup.com/lucid32.box
   
 this will install a mostly vanilla flavoured ubuntu lts(lucid), with ruby preinstalled[…]
@@ -60,9 +64,36 @@ this will install a mostly vanilla flavoured ubuntu lts(lucid), with ruby preins
 -
     $ vagrant up
 
+An ugly VirtualBox window should come up ;)
+
 [..]still a little work to do
 for now provisioning works until /createbooki --database […]
 quite happy so far, as the python/django dependency installation is already working.
 
 go to http://127.0.0.1:8000
 and access your booktype
+
+### Troubleshooting
+if provisioning (vagrant up) stops with
+       
+    E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+    ---- End output of apt-get -q -y install postgresql-client=8.4.8-0ubuntu0.10.04 ----
+
+    Chef never successfully completed! Any errors should be visible in the
+    output above. Please fix your recipes so that they properly complete.
+
+ssh into the booktype VM with
+
+    $ vagrant ssh
+and do an apt-get update manually
+    $ sudo apt-get update
+
+then exiting the vm shell to get back to your vagrant directory on the host os
+
+    $ exit
+
+run provisioning again
+
+    $ vagrant provision
+
+-
