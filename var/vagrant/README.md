@@ -11,9 +11,6 @@
 ###VirtualBox
 download and install VirtualBox
 https://www.virtualbox.org/
-### Build essentials
-make sure you have buildtools for your os installed
-(install XCode and DevTools if your on os x)
 
 ###rvm
 vagrant and chef are rubies. we could just use the ruby that is already installed on our host machine*.
@@ -27,14 +24,15 @@ see http://beginrescueend.com/
     $ curl -L get.rvm.io | bash -s stable
 Reload your shell environment:
        
-    $ source ~/.bash_profile
+    $ source ~/.rvm/scripts/rvm
+
 Find the requirements (follow the instructions):
 
     $ rvm requirements
 
-change to the directory vagrant will be run from (inside Booktype src)
+change to the project directory  booktype will live in (we will checkout booktype source to that directory as well)
 
-    $ cd var/vagrant
+    $ cd your/project 
 
 Install ruby for our booktype environment    $ rvm --rvmrc --create 1.9.3@booktype
 
