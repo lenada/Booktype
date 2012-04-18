@@ -76,7 +76,7 @@ createbooki should have created a mybooktype folder within var/www
 go to http://127.0.0.1:8000
 and access your booktype
 
-### Troubleshooting
+# Troubleshooting
 if provisioning (vagrant up) stops with
        
     E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
@@ -90,6 +90,7 @@ ssh into the booktype VM with
     $ vagrant ssh
 and do an apt-get update manually
 
+#### apt sources need update
     $ sudo apt-get update
 
 then exiting the vm shell to get back to your vagrant directory on the host os
@@ -99,6 +100,22 @@ then exiting the vm shell to get back to your vagrant directory on the host os
 run provisioning again
 
     $ vagrant provision
+
+
+#### VM NAT/Hostonly Network does not come up and vagrant can't ssh into the box
+
+if provisioning stops and finally times out at the beginning.
+this happens sometimes if you roam through different Wifis or just close your laptop at work and open it again back home.
+
+switch to VirtualBox application GUI window of the VM 
+
+login with:
+login: vagrant
+password: vagrant
+
+and do a 
+
+	 $ sudo dhclient
 
 -
 

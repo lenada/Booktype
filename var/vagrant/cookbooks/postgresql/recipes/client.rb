@@ -18,6 +18,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include_recipe "vagrant-fix::default"
+include_recipe "vagrant-fix::repair"
 
 pg_packages = case node['platform']
 when "ubuntu","debian"
@@ -36,9 +38,11 @@ end
 pg_packages.each do |pg_pack|
   package pg_pack do
     action :nothing
-  end.run_action(:install)
+  end
+  #.run_action(:install)
 end
 
 gem_package "pg" do
   action :nothing
-end.run_action(:install)
+end
+#.run_action(:install)

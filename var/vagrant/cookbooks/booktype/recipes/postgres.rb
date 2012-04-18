@@ -1,3 +1,5 @@
+include_recipe "postgresql::server"
+
 execute "add_db" do
     cwd "/tmp"
     user "postgres"
