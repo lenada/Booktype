@@ -23,11 +23,11 @@ Vagrant::Config.run do |config|
     #chef.data_bags_path = "./data-bags"
 	chef.cookbooks_path = "./cookbooks"
     chef.add_recipe "vagrant-fix::default"
-    chef.add_recipe "postgresql::server"
     chef.add_recipe "nginx::default"
     chef.add_recipe "python::package"
 	chef.add_recipe "booktype::pip"
 	chef.add_recipe "booktype::django"
+    chef.add_recipe "postgresql::server"
     chef.add_recipe "booktype::postgres"
     chef.add_recipe "booktype::booktype"
     chef.log_level = :debug
