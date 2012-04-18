@@ -30,11 +30,17 @@ Find the requirements (follow the instructions):
 
     $ rvm requirements
 
-change to the project directory  booktype will live in (we will checkout booktype source to that directory as well)
+Install rvm    $ rvm install ruby-1.9.3-p125
 
-    $ cd your/project 
+### get Booktype source code (vagrant fork)
 
-Install ruby for our booktype environment    $ rvm --rvmrc --create 1.9.3@booktype
+    $ git clone git://github.com/lenada/Booktype.git
+
+change to the freshly cloned Booktype directory
+
+    $ cd Booktype/var/vagrant
+create an rvmc file within your booktype project directory, everytime we cd there will initialze our booktype rvm environment
+    $ rvm --rvmrc --create 1.9.3@booktype
 
 ###vagrant
 see http://vagrantup.com/
@@ -57,10 +63,11 @@ this will install a mostly vanilla flavoured ubuntu lts(lucid), with ruby preins
 
 
 ## $ vagrant up or Booktype almost ready
-    $ git clone git://github.com/lenada/Booktype.git
--
+go to your Booktype source code cloned earlier
+
     $ cd Booktype/var/vagrant
--
+then fire up vagrant
+
     $ vagrant up
 
 An ugly VirtualBox window should come up ;)
@@ -75,31 +82,6 @@ go to http://127.0.0.1:8000
 and access your booktype
 
 # Troubleshooting
-if provisioning (vagrant up) stops with
-       
-    E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
-    ---- End output of apt-get -q -y install postgresql-client=8.4.8-0ubuntu0.10.04 ----
-
-    Chef never successfully completed! Any errors should be visible in the
-    output above. Please fix your recipes so that they properly complete.
-
-ssh into the booktype VM with
-
-    $ vagrant ssh
-and do an apt-get update manually
-
-#### apt sources need update
-    $ sudo apt-get update
-
-then exiting the vm shell to get back to your vagrant directory on the host os
-
-    $ exit
-
-run provisioning again
-
-    $ vagrant provision
-
-
 #### VM NAT/Hostonly Network does not come up and vagrant can't ssh into the box
 
 if provisioning stops and finally times out at the beginning.
@@ -116,5 +98,32 @@ and do a
 	 $ sudo dhclient
 
 -
+
+#### apt sources need update
+if provisioning (vagrant up) stops with
+       
+    E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+    ---- End output of apt-get -q -y install postgresql-client=8.4.8-0ubuntu0.10.04 ----
+
+    Chef never successfully completed! Any errors should be visible in the
+    output above. Please fix your recipes so that they properly complete.
+
+ssh into the booktype VM with
+
+    $ vagrant ssh
+and do an apt-get update manually
+
+    $ sudo apt-get update
+
+then exiting the vm shell to get back to your vagrant directory on the host os
+
+    $ exit
+
+run provisioning again
+
+    $ vagrant provision
+
+
+
 
 * using Os X 10.7.3 with Xcode 4.1
