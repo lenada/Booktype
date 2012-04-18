@@ -31,11 +31,12 @@ Reload your shell environment:
 Find the requirements (follow the instructions):
 
     $ rvm requirements
-Install ruby:
 
-    
-    $ rvm install 1.9.3
+change to the directory vagrant will be run from (inside Booktype src)
 
+    $ cd var/vagrant
+
+Install ruby for our booktype environment    $ rvm --rvmrc --create 1.9.3@booktype
 
 ###vagrant
 see http://vagrantup.com/
