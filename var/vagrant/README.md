@@ -3,7 +3,7 @@
  - setup a Booktype Installation automatically in a virtual environment
  - having the booktype source and app files in you native OS of choice
  - reproducible portable development environments
- - plattform independent (linux/*nix(Theoretically windows))
+ - plattform independent (linux/*nix(Theoretically windows http://rubyinstaller.org/))
  - http://vagrantup.com/
 
 ##Requirements
