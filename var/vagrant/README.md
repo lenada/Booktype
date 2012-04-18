@@ -59,7 +59,7 @@ this will install a mostly vanilla flavoured ubuntu lts(lucid), with ruby preins
 
 
 ## $ vagrant up or Booktype almost ready
-    $ git clone git@github.com:lenada/Booktype.git
+    $ git clone git://github.com/lenada/Booktype.git
 -
     $ cd Booktype/var/vagrant
 -
